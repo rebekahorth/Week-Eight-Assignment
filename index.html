@@ -1,3 +1,8 @@
+#Rebekah Orth
+#CIS 125 FA 2015
+#Week 8: Turtle
+
+
 <html> 
 <head> 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script> 
@@ -50,10 +55,24 @@ function runit() {
 import turtle
 t = turtle.Turtle()
 
-for c in ["red","green","blue","yellow","orange"]:
-    t.color(c)
-    t.forward(100)
-    t.left(144)
+
+length = 25
+c = 0
+s = 0
+s = int(input ("Please insert a number that is between 2 and 25: "))
+while s < 3 or s > 25:
+    if s < 3:
+        print("Please input a larger number, that is between 2 and 25: ")
+    elif s > 25:
+        print("Please input a smaller number, that is between 2 and 25: ")
+    s = int(input ("Please insert a number that is between 2 and 25: "))
+    
+a = 180 - (((s-2)*180)/s)
+rc = str(input ("Please insert a rainbow color that you would like your shape displayed in: "))
+for c in range(s): 
+    t.color(rc)
+    t.forward(length)
+    t.left(a)  
 
 </textarea><br /> 
 <button type="button" onclick="runit()">Run</button> 
